@@ -140,8 +140,6 @@ int main()
 				{
 					bullet[0].bullet_st = 0;
 					star_destroy(bullet[0].coord_x, bullet[0].coord_y - 1);
-					Beep(1000, 100);
-					printScore(score);
 				}
 				else
 				{
@@ -162,8 +160,6 @@ int main()
 				{
 					bullet[1].bullet_st = 0;
 					star_destroy(bullet[1].coord_x, bullet[1].coord_y - 1);
-					Beep(1000, 100);
-					printScore(score);
 				}
 				else
 				{
@@ -184,8 +180,6 @@ int main()
 				{
 					bullet[2].bullet_st = 0;
 					star_destroy(bullet[2].coord_x, bullet[2].coord_y - 1);
-					Beep(1000, 100);
-					printScore(score);
 				}
 				else
 				{
@@ -206,8 +200,6 @@ int main()
 				{
 					bullet[3].bullet_st = 0;
 					star_destroy(bullet[3].coord_x, bullet[3].coord_y - 1);
-					Beep(1000, 100);
-					printScore(score);
 				}
 				else
 				{
@@ -228,8 +220,6 @@ int main()
 				{
 					bullet[4].bullet_st = 0;
 					star_destroy(bullet[4].coord_x, bullet[4].coord_y - 1);
-					Beep(1000, 100);
-					printScore(score);
 				}
 				else
 				{
@@ -358,6 +348,8 @@ void star_destroy(int x, int y)
 	COORD_star[y][x] = 0;
 	star_random();
 	score += 100;
+	Beep(1000, 100);
+	printScore(score);
 }
 
 
