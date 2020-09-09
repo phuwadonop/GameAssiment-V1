@@ -243,7 +243,7 @@ int main()
 		}
 		if (bullet[0].bullet_st == 1 || bullet[1].bullet_st == 1 || bullet[2].bullet_st == 1 || bullet[3].bullet_st == 1 || bullet[4].bullet_st == 1)
 		{
-
+			Beep(500, 50); Sleep(50);
 		}
 		else
 		{
