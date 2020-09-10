@@ -138,7 +138,7 @@ int main()
 			{
 				if (cursor(bullet[0].coord_x, bullet[0].coord_y - 1) == '*')
 				{
-					bullet[0].bullet_st = 0;
+					Beep(1000, 100); bullet[0].bullet_st = 0;
 					star_destroy(bullet[0].coord_x, bullet[0].coord_y - 1);
 				}
 				else
@@ -158,7 +158,7 @@ int main()
 			{
 				if (cursor(bullet[1].coord_x, bullet[1].coord_y - 1) == '*')
 				{
-					bullet[1].bullet_st = 0;
+					Beep(1000, 100); bullet[1].bullet_st = 0;
 					star_destroy(bullet[1].coord_x, bullet[1].coord_y - 1);
 				}
 				else
@@ -178,7 +178,7 @@ int main()
 			{
 				if (cursor(bullet[2].coord_x, bullet[2].coord_y - 1) == '*')
 				{
-					bullet[2].bullet_st = 0;
+					Beep(1000, 100); bullet[2].bullet_st = 0;
 					star_destroy(bullet[2].coord_x, bullet[2].coord_y - 1);
 				}
 				else
@@ -198,7 +198,7 @@ int main()
 			{
 				if (cursor(bullet[3].coord_x, bullet[3].coord_y - 1) == '*')
 				{
-					bullet[3].bullet_st = 0;
+					Beep(1000, 100); bullet[3].bullet_st = 0;
 					star_destroy(bullet[3].coord_x, bullet[3].coord_y - 1);
 				}
 				else
@@ -218,7 +218,7 @@ int main()
 			{
 				if (cursor(bullet[4].coord_x, bullet[4].coord_y - 1) == '*')
 				{
-					bullet[4].bullet_st = 0;
+					Beep(1000, 100); bullet[4].bullet_st = 0;
 					star_destroy(bullet[4].coord_x, bullet[4].coord_y - 1);
 				}
 				else
@@ -233,9 +233,9 @@ int main()
 		}
 		if (bullet[0].bullet_st == 1 || bullet[1].bullet_st == 1 || bullet[2].bullet_st == 1 || bullet[3].bullet_st == 1 || bullet[4].bullet_st == 1)
 		{
-			Beep(500, 50); Sleep(50);
+			Beep(700,100);
 		}
-		else
+		if (bullet[0].bullet_st == 0 && bullet[1].bullet_st == 0 && bullet[2].bullet_st == 0 && bullet[3].bullet_st == 0 && bullet[4].bullet_st == 0)
 		{
 			Sleep(100);
 		}
@@ -316,7 +316,7 @@ char cursor(int x, int y)
 }
 void printScore(int x)
 {
-	gotoxy(75, 0);
+	gotoxy(83, 0);
 	printf("      ");
 	int Num[6] = { 0,0,0,0,0,0 };
 	string point = to_string(x);
@@ -334,7 +334,7 @@ void printScore(int x)
 		}
 		i++;
 	}
-	gotoxy(75, 0);
+	gotoxy(83, 0);
 	setcolor(7, 0);
 	for (int i = 0; i < 6;i++)
 	{
@@ -348,7 +348,6 @@ void star_destroy(int x, int y)
 	COORD_star[y][x] = 0;
 	star_random();
 	score += 100;
-	Beep(1000, 100);
 	printScore(score);
 }
 
